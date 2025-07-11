@@ -8,15 +8,15 @@ const TaskList = () => {
       <ul className="task-list">
         <li className="task-item">
           <h3 className="task-title">タスク1</h3>
-          <Button className="thirdry" label="詳細" onClick={() => {}}></Button>
+          <Button className="thirdry" label="詳細" onClick={() => {}}/>
         </li>
         <li className="task-item">
           <h3 className="task-title">タスク2</h3>
-          <Button className="thirdry" label="詳細"></Button>
+          <Button className="thirdry" label="詳細"/>
         </li>
         <li className="task-item">
           <h3 className="task-title">タスク3</h3>
-          <Button className="thirdry" label="詳細"></Button>
+          <Button className="thirdry" label="詳細"/>
         </li>
       </ul>
     </div>
