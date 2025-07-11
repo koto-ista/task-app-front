@@ -75,6 +75,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     padding: 0px 20px;
 }
 
@@ -120,39 +121,41 @@ ul {
 
 .task-list {
     padding-top: 10px;
+    width: 100%;
 }
 
 /* タスクアイテム */
 
 .task-item {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    padding-right: 10px;
 }
 
 .task-title {
     font-size: 1.5rem;
     text-align: left;
     padding: 10px;
+    width: 80%;
 }
 
 /* タスク追加 */
 
-.task-add-wrapper {
-    padding: 20px;
+.task-wrapper {
+    padding: 10px 0px;
     border-radius: 10px;
-    width: 90%;
-    /* height: 60vh; */
-    /* background-color: #7c7c7c; */
-    margin: 0 auto;
+    width: 100%;
 }
 
-.task-add-form-wrapper {
+.task-form-wrapper {
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -162,12 +165,12 @@ ul {
     border: 1px solid #333;
 }
 
-.task-add-header {
+.task-header {
     /* padding-left: 10px; */
     text-align: center;
 }
 
-.task-add-header input {
+.task-header input {
     width: 96%;
     font-size: 1.2rem;
     text-align: left;
@@ -178,11 +181,11 @@ ul {
     font-weight: bold;
 }
 
-.task-add-body {
+.task-body {
     margin-top: 10px;
 }
 
-.task-add-body textarea {
+.task-body textarea {
     width: 96%;
     height: 50vh;
     border: none;
@@ -192,7 +195,7 @@ ul {
     outline: none;
 }
 
-.task-add-footer {
+.task-footer {
     padding: 10px;
 }
 
@@ -228,10 +231,14 @@ button.primary {
     height: 70px;
 }
 
+/* 編集用ボタン */
 button.secondary {
     background-color: #19f566;
     color: #fff;
+    font-size: 2.5rem;
     border-radius: 10px;
+    width: 160px;
+    height: 70px;
 }
 
 /* 詳細用ボタン */
