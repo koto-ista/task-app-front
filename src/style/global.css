@@ -1,0 +1,18 @@
+.header-wrapper {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo-sub {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
