@@ -8,7 +8,7 @@ interface Props {
 
 const Button = (props: Props) => {
   return (
-      <button className={props.className} onClick={props.onClick}>{props.label}</button>
+      <button type="submit" className={props.className} onClick={props.onClick}>{props.label}</button>
   );
 };
 

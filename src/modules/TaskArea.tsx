@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskList from '../pages/Tasks/TaskList';
-import { Task } from '../pages/Home/Home';
+import { Task } from '../pages/Base';
 
 interface Props {
   statusColor: string;

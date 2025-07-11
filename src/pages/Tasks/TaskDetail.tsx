@@ -16,7 +16,7 @@ const TaskDetail = () => {
                 </div>
             </div>
             <div className="task-footer">
-                <Button className="secondary" label="編集" onClick={() => { navigate('/') }} />
+                <Button className="secondary" label="編集" />
             </div>
         </form>
     </div>

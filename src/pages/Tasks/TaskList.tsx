@@ -2,7 +2,7 @@ import React from 'react';
 import Task from './Task';
 import Button from '../../modules/Button';
 import { useNavigate } from 'react-router-dom';
-import { Task as TaskType} from '../Home/Home';
+import { Task as TaskType} from '../Base';
 
 interface Props {
   taskList: TaskType[];
