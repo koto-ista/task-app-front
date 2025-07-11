@@ -1,40 +1,167 @@
+/* 共通 */
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 色 */
+
+.back-color-todo {
+    background-color: #EEEEEE;
+}
+
+.back-color-inProgress {
+    background-color: #FCE5CD;
+}
+
+.back-color-done {
+    background-color: #C9DAF8;
+}
+
+.color-todo {
+    background-color: #B7B7B7;
+    opacity: 1;
+}
+
+.color-inProgress {
+    background-color: #F6B26B;
+    opacity: 1;
+}
+
+.color-done {
+    background-color: #6D9EEB;
+    opacity: 1;
+}
+.color-todo:hover, .color-inProgress:hover, .color-done:hover {
+    opacity: 0.5;
+}
+
+/* ヘッダー */
+
 .header-wrapper {
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #333;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
 }
 
 .logo {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 .logo-sub {
-  font-size: 1rem;
-  font-weight: normal;
-  margin: 0;
-  border-bottom: 1px solid #333;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+    border-bottom: 1px solid #333;
 }
+
+/* ホーム */
 
 .home-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
 }
+
+/* タスクエリア */
 
 .task-area {
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  width: 30%;
-  height: 60vh;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    height: 60vh;
 }
 
-.task-area-header {
-  margin: 0;
-  border-bottom: 1px solid #333;
+.task-area-header-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+.task-area-header-title {
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+
+.task-area-header-count {
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 60%;
 }
 
 .task-area-body {}
+
+/* タスクリスト */
+
+.task-list {
+    padding-top: 10px;
+}
+
+/* タスクアイテム */
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task-title {
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 10px;
+}
+
+/* ボタン */
+
+button {
+    padding: 5px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+button.primary {
+    background-color: #4498f7;
+    color: #fff;
+    border-radius: 10px;
+    width: 60px;
+    height: 40px;
+}
+
+button.secondary {
+    background-color: #19f566;
+    color: #fff;
+    border-radius: 10px;
+}
+
+button.thirdry {
+    background-color: #7c7c7c;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    width: 60px;
+}

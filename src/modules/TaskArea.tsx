@@ -1,18 +1,20 @@
 import React from 'react';
+import TaskList from '../pages/Tasks/TaskList';
 
-const TaskArea = () => {
+interface Props {
+  statusColor: string;
+  statusName: string;
+  statusCount: number;
+}
+
+const TaskArea = (props: Props) => {
   return (
-    <div className="task-area">
-      <div className="task-area-header">
-        <h2>タスク一覧</h2>
+    <div className={`task-area back-color-${props.statusColor}`}>
+      <div className="task-area-header-wrapper">
+        <h2 className={`task-area-header-title color-${props.statusColor}`}>{props.statusName}</h2>
+        <p className={`task-area-header-count color-${props.statusColor}`}>{props.statusCount}</p>
       </div>
-      <div className="task-area-body">
-        <ul className="task-list">
-          <li className="task-item">
-            <h3 className="task-title">タスク1</h3>
-          </li>
-        </ul>
-      </div>
+        <TaskList></TaskList>
     </div>
   );
 };
