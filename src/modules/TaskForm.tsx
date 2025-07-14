@@ -11,8 +11,8 @@ interface Props {
 const TaskForm = (props: Props) => {
     const navigate = useNavigate();
 
-    // 状態変数の定義
-    const [task, setTask] = useState<Task>({
+    // 状態変数の定義(初期値はprops.task)
+    const [task, setTask] = useState<Task>(props.task || {
         id: 0,
         title: '',
         content: '',

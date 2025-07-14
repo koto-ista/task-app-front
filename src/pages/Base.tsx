@@ -60,13 +60,19 @@ const Base = () => {
         // console.log(task);
         setTasks([...tasks, task]);
     };
+
+    const editTask = (task: Task) => {
+        console.log(task);
+        setTasks(tasks.map(t => t.id === task.id ? task : t));
+    };
+
     return (
         <div>
             <Header />
             <Routes>
                 <Route path="/" element={<Home tasks={tasks} setTasks={setTasks} />} />
                 <Route path="/add" element={<TaskAdd addTask={addTask} />} />
-                <Route path="/detail/:taskId" element={<TaskDetail />} />
+                <Route path="/detail/:taskId" element={<TaskDetail tasks={tasks} editTask={editTask} />} />
             </Routes>
         </div>
     );

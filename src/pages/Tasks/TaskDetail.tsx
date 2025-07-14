@@ -1,24 +1,19 @@
 import React from 'react';
-import Button from '../../modules/Button';
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import TaskForm from '../../modules/TaskForm';
+import { Task } from '../Base';
 
-const TaskDetail = () => {
-    const navigate = useNavigate();
+interface Props {
+    tasks: Task[];
+    editTask: (task: Task) => void;
+}
+
+const TaskDetail = (props: Props) => {
+    const { taskId } = useParams();
+    const task = props.tasks.find(task => task.id === Number(taskId));
   return (
     <div className="task-wrapper">
-        <form action="">
-            <div className="task-form-wrapper">
-                <div className="task-header">
-                    <input type="text" placeholder="タイトル" />
-                </div>
-                <div className="task-body">
-                    <textarea name="" id="" placeholder="内容"></textarea>
-                </div>
-            </div>
-            <div className="task-footer">
-                <Button className="secondary" label="編集" />
-            </div>
-        </form>
+        <TaskForm task={task} setTask={props.editTask} />
     </div>
     );
 };

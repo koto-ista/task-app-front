@@ -1,6 +1,6 @@
 import React from 'react';
-import TaskList from '../pages/Tasks/TaskList';
 import { Task } from '../pages/Base';
+import TaskItem from './TaskItem';
 
 interface Props {
   statusColor: string;
@@ -16,7 +16,7 @@ const TaskArea = (props: Props) => {
         <h2 className={`task-area-header-title color-${props.statusColor}`}>{props.statusName}</h2>
         <p className={`task-area-header-count color-${props.statusColor}`}>{statusCount}</p>
       </div>
-        <TaskList taskList={props.taskList}></TaskList>
+        <TaskItem taskList={props.taskList} />
     </div>
   );
 };

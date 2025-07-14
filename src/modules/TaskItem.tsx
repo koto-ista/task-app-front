@@ -1,14 +1,13 @@
 import React from 'react';
-import Task from './Task';
-import Button from '../../modules/Button';
+import Button from './Button';
 import { useNavigate } from 'react-router-dom';
-import { Task as TaskType} from '../Base';
+import { Task as TaskType} from '../pages/Base';
 
 interface Props {
   taskList: TaskType[];
 }
 
-const TaskList = (props: Props) => {
+const TaskItem = (props: Props) => {
   const navigate = useNavigate();
   return (
     <div className="task-wrapper">
@@ -24,4 +23,4 @@ const TaskList = (props: Props) => {
   );
 };
 
-export default TaskList;
+export default TaskItem;
