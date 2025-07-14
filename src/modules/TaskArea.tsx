@@ -1,6 +1,6 @@
 import React from 'react';
 import { Task } from '../pages/Base';
-import TaskItem from './TaskItem';
+import TaskList from './TaskList';
 import TaskStatusText from './TaskStatusText';
 
 interface Props {
@@ -17,7 +17,7 @@ const TaskArea = (props: Props) => {
             <TaskStatusText type="title" statusColor={props.statusColor} label={props.statusName} />
             <TaskStatusText type="count" statusColor={props.statusColor} label={statusCount} />
         </div>
-        <TaskItem taskList={props.taskList} />
+        <TaskList taskList={props.taskList} />
     </div>
   );
 };
