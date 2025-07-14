@@ -4,6 +4,11 @@ import { Task } from '../Base';
 
 const status: Status[] = [
     {
+        id: 0,
+        status: 'すべて',
+        color: 'all',
+    },
+    {
         id: 1,
         status: '未着手',
         color: 'todo',
@@ -17,11 +22,6 @@ const status: Status[] = [
         id: 3,
         status: '完了',
         color: 'done',
-    },
-    {
-        id: 4,
-        status: 'すべて',
-        color: 'all',
     },
 ];
 
@@ -45,7 +45,7 @@ const Home = (props: Props) => {
   return (
     <div className="home-wrapper">
             { 
-            status.filter((status) => status.status !== 'すべて')
+            status.filter((status) => status.id !== 0)
             .map((status) => (
                 <TaskArea key={status.id} statusColor={status.color} statusName={status.status} taskList={taskListByStatus(status)} />
             ))}        
