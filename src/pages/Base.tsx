@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
@@ -11,17 +11,6 @@ export type Task = {
     content: string;
     status: number;
 };
-
-// グローバル状態変数のタスクの型定義
-export type TaskContentType = {
-    tasks: Task[];
-    setTasks: (tasks: Task[]) => void;
-};
-// グローバル状態変数のタスクの初期値
-export const TaskContext = createContext<TaskContentType>({
-    tasks: [],
-    setTasks: (tasks: Task[]) => { },
-});
 
 const initialTasks: Task[] = [
     {
@@ -64,22 +53,21 @@ const initialTasks: Task[] = [
 ];
 
 const Base = () => {
-    // タスクの状態変数とその更新関数
-    const [tasks, setTasks] = useState<Task[]>(initialTasks); 
-    const taskContextValue: TaskContentType = {
-        tasks: tasks,
-        setTasks: setTasks
+    let [tasks, setTasks] = useState<Task[]>(initialTasks);
+
+    const addTask = (task: Task) => {
+        task.id = tasks.length + 1;
+        // console.log(task);
+        setTasks([...tasks, task]);
     };
     return (
         <div>
-            <TaskContext.Provider value={taskContextValue}>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/add" element={<TaskAdd />} />
-                    <Route path="/detail/:taskId" element={<TaskDetail />} />
-                </Routes>
-            </TaskContext.Provider>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home tasks={tasks} setTasks={setTasks} />} />
+                <Route path="/add" element={<TaskAdd addTask={addTask} />} />
+                <Route path="/detail/:taskId" element={<TaskDetail />} />
+            </Routes>
         </div>
     );
 };

@@ -1,15 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Button from '../../modules/Button';
 import { useNavigate } from 'react-router-dom';
-import { TaskContext, TaskContentType, Task } from '../Base';
+import { Task } from '../Base';
 
-const TaskAdd = () => {
+interface Props {
+    addTask: (task: Task) => void;
+}
+
+const TaskAdd = (props: Props) => {
     const navigate = useNavigate();
-    const { tasks, setTasks }: TaskContentType = useContext<TaskContentType>(TaskContext);
 
     // 状態変数の定義
     const [task, setTask] = useState<Task>({
-        id: tasks.length + 1,
+        id: 0,
         title: '',
         content: '',
         status: 1
@@ -26,9 +29,7 @@ const TaskAdd = () => {
     // フォームの送信を処理する関数
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        console.log(tasks);
-        console.log(task);
-        setTasks([...tasks, task]);
+        props.addTask(task);
         navigate('/');
     };
 

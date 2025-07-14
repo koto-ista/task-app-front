@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useState } from 'react';
 import TaskArea from '../../modules/TaskArea';
-import { TaskContext } from '../Base';
+import { Task } from '../Base';
 
 const status: Status[] = [
     {
@@ -31,9 +31,13 @@ type Status = {
     color: string;
 };
 
+interface Props {
+    tasks: Task[];
+    setTasks: (tasks: Task[]) => void;
+}
 
-const Home = () => {
-    const { tasks } = useContext(TaskContext);
+const Home = (props: Props) => {
+    const [tasks, setTasks] = useState<Task[]>(props.tasks);
     const taskListByStatus = (status: Status) => {
         return tasks.filter((task) => task.status === status.id);
     };
