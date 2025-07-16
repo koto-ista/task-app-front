@@ -71,6 +71,10 @@ export default function App() {
   }
 
   function handleDragOver(event: DragOverEvent) {
+    console.log('over', event);
+  }
+
+  function handleDragOverA(event: DragOverEvent) {
     const { active, over } = event;
     const activeId = active.id;
     const overId = over?.id;
@@ -151,7 +155,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex gap-4 p-2">
+    <div className="home-wrapper">
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}

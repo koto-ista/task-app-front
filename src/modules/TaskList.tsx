@@ -1,6 +1,6 @@
 import React from 'react';
 import { Task as TaskType} from '../pages/Base';
-import TaskItem from './TaskItem';
+import { SortableTaskItem } from './SortableTaskItem';
 
 interface Props {
   taskList: TaskType[];
@@ -11,7 +11,7 @@ const TaskList = (props: Props) => {
     <div className="task-wrapper">
       <ul className="task-list">
         {props.taskList.map((task) => (
-          <TaskItem key={task.id} task={task} />
+          <SortableTaskItem key={task.id} id={task.id} task={task} />
         ))}
       </ul>
     </div>

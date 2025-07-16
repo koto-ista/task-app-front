@@ -1,6 +1,12 @@
 /* 共通 */
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
@@ -38,7 +44,10 @@ ul {
     background-color: #6D9EEB;
     opacity: 1;
 }
-.color-todo:hover, .color-inProgress:hover, .color-done:hover {
+
+.color-todo:hover,
+.color-inProgress:hover,
+.color-done:hover {
     opacity: 0.5;
 }
 
@@ -145,6 +154,12 @@ ul {
     text-align: left;
     padding: 10px;
     width: 80%;
+}
+
+.task-grab {
+    cursor: grab;
+    user-select: none;
+    font-size: 30px;
 }
 
 /* タスク追加 */

@@ -4,9 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import TaskAdd from './Tasks/TaskAdd';
 import TaskDetail from './Tasks/TaskDetail';
+import AppDev from '../dev/AppDev';
 
 export type Task = {
-    id: number;
+    id: number | string;
     title: string;
     content: string;
     status: number;
@@ -53,7 +54,7 @@ const initialTasks: Task[] = [
 ];
 
 const Base = () => {
-    let [tasks, setTasks] = useState<Task[]>(initialTasks);
+    const [tasks, setTasks] = useState<Task[]>(() => initialTasks);
 
     const addTask = (task: Task) => {
         task.id = tasks.length + 1;
@@ -70,9 +71,10 @@ const Base = () => {
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<Home tasks={tasks} setTasks={setTasks} />} />
+                <Route path="/" element={<Home tasks={tasks} setTasks={setTasks} editTask={editTask}/>} />
                 <Route path="/add" element={<TaskAdd addTask={addTask} />} />
                 <Route path="/detail/:taskId" element={<TaskDetail tasks={tasks} editTask={editTask} />} />
+                <Route path="/dev" element={<AppDev />} />
             </Routes>
         </div>
     );
